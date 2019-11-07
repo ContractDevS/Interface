@@ -1,16 +1,31 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="utf-8">
-        </head>
-        <body>
-            <div>
-                <input id="loginBox" type="text"> 
-                <input id="pwdBox" type="text"> 
-                <button onclick="login();">Войти</button> 
-            </div>
-            <script src="web3.min.js"></script>
-            <script src="main.js"></script>
-            
-        </body>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <div id="loginForm">
+            <h1>Вход</h1>
+            <input id="loginBox" type="text"> 
+            <input id="pwdBox" type="text"> 
+            <button onclick="login();">Войти</button>
+            <p>Если вы еще не зарегистрировались нажмите <a onclick="showLogin();" href="#">сюда</a></p>
+        </div>
+
+        <div id="regForm" style="display: none;">
+            <h1>Регистрация</h1>
+            <input id="pwdBoxRegFirst" type="password"> 
+            <input id="pwdBoxRegSecond" type="password"> 
+            <button onclick="registrate();">Зарегистрироваться</button> 
+            <p><a onclick="showReg();" href="#">Вход</a> </p>
+        </div>
+
+        <div id="profileForm" style="display: none;">
+            <h1>Профиль</h1>
+        </div>
+
+        <script src="web3.min.js"></script>
+        <script src="main.js"></script>
+    </body>
 </html>
