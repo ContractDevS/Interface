@@ -7,22 +7,31 @@
 
         <div id="loginForm">
             <h1>Вход</h1>
-            <input id="loginBox" type="text"> 
-            <input id="pwdBox" type="text"> 
+            <input id="loginBox" type="text" value="0xd6faec0eced3f76b1b97de2590b855ecda3c8e68">
+            <br><br>
+            <input id="pwdBox" type="text"><br><br>
             <button onclick="login();">Войти</button>
             <p>Если вы еще не зарегистрировались нажмите <a onclick="showLogin();" href="#">сюда</a></p>
         </div>
 
         <div id="regForm" style="display: none;">
             <h1>Регистрация</h1>
-            <input id="pwdBoxRegFirst" type="password"> 
+            <input id="pwdBoxRegFirst" type="password">
+            <br><br>
             <input id="pwdBoxRegSecond" type="password"> 
             <button onclick="registrate();">Зарегистрироваться</button> 
             <p><a onclick="showReg();" href="#">Вход</a> </p>
         </div>
 
         <div id="profileForm" style="display: none;">
-            <h1>Профиль</h1>
+            <h1>Информация о профиле</h1>
+            <input id="idBox" type="text">
+            <button onclick="showInfo();">Получить</button>
+        </div>
+
+        <div id="userInfoBox" style="display: none; width: 500px; border: 1px solid lightgray; border-radius: 10px; padding: 15px;">
+            <h2 id="userName"></h2><hr><br><br>
+            <p id="userHomeAddr"></p>
         </div>
 
         <script src="web3.min.js"></script>
