@@ -1,4 +1,4 @@
-var web3 = new Web3(new Web3.providers.HttpProvider("http://10.1.202.14:8541"));
+var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8541"));
 var address;
 var contract;
 var contractABI = [
@@ -306,6 +306,9 @@ function registrate() {
         alert("Пароли не совпадают!");
     }
 }
+
+var roles = ["Главный администратор", "Администратор", "Сотрудник почтового отделения", "Пользователей"];
+
 async function showInfo() {
 	var userid = document.getElementById("idBox");
 	var userInfo;
@@ -314,7 +317,11 @@ async function showInfo() {
 		if(userInfo !== undefined) {
 			document.getElementById("userInfoBox").style.display = "block";
 			document.getElementById("userName").innerHTML = userInfo[0];
-			document.getElementById("userHomeAddr").innerHTML = userInfo[1];
+			document.getElementById("userHomeAddr").innerHTML = userInfo[1];  
+			document.getElementById("userRole").innerHTML = roles[userInfo[2]];
+			document.getElementById("addressUser").innerHTML = userInfo[3];
+			document.getElementById("stringPostalIndex").innerHTML = userInfo[4]; 
+			document.getElementById("boolActive").innerHTML = (userInfo[5]) ? "Активен": "Пассивен";
 		} else {
 			alert("Пользователь не найден!");
 		}
